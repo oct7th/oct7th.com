@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= I18n.locale %>">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will the World End on October 7th 2015?</title>
-  <meta name="description" content="Could the last day be October 7th? Biblical evidence indicates that October 7th 2015 is very likely the end." />
+  <title><%= t(:page_title) %></title>
+  <meta name="description" content="<%= t(:page_description) %>">
   <meta name="author" content="">
-
-
-
   <!-- GOOGLE ANALYTICS  -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,33 +38,23 @@
   </script>
   <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6028906726051&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
 
-
-
-
-
-
-
-
-
-
   <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
 
   <!-- Fonts -->
-  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+  <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom Theme CSS -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
   <!-- Advanced CSS -->
-  <link href="css/animate.css" rel="stylesheet">
-  <link href="js/lib/owl-carousel/owl.carousel.css" rel="stylesheet">
-  <link href="js/lib/owl-carousel/owl.theme.css" rel="stylesheet">
-  <link href="js/lib/owl-carousel/owl.transitions.css" rel="stylesheet">
-  <link href="js/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="js/lib/video/YTPlayer.css" rel="stylesheet">
-  <link href="js/lib/flipclock/flipclock.css" rel="stylesheet">
+  <link href="/css/animate.css" rel="stylesheet">
+  <link href="/js/lib/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="/js/lib/owl-carousel/owl.theme.css" rel="stylesheet">
+  <link href="/js/lib/owl-carousel/owl.transitions.css" rel="stylesheet">
+  <link href="/js/lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="/js/lib/video/YTPlayer.css" rel="stylesheet">
+  <link href="/js/lib/flipclock/flipclock.css" rel="stylesheet">
 
 </head>
 
@@ -104,6 +91,7 @@
               }, 3000);
             });
           </script>
+
           <!-- AddToAny BEGIN -->
           <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
             <a class="a2a_button_facebook" style="vertical-align:top;zoom:1;*display:inline"></a>
@@ -124,13 +112,28 @@
               <a href="#page-top"></a>
             </li>
             <li class="page-scroll">
-              <a href="#about">Why Oct 7th?</a>
+              <a href="#about"><%= t(:nav_why_oct7th) %></a>
             </li>
             <li class="page-scroll">
-              <a href="#movie-player">Watch The Video</a>
+              <a href="#movie-player"><%= t(:nav_the_video) %></a>
             </li>
             <li class="page-scroll">
-              <a href="#links">Helpful Links</a>
+              <a href="#links"><%= t(:nav_helpful_links) %></a>
+            </li>
+            <li class="dropdown page-scroll" style="text-transform: none;">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                 role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-language fa-large"></i> <%= "#{data.languages[I18n.locale]['name']} (#{I18n.locale})" %>
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              <% data.languages['active'].each do |lang|
+                 # English is the root, others are subdirs
+                 href = (lang == 'en') ? '/' : "/#{lang}/"
+                 name = data.languages[lang]['name']
+%>
+                <li><a href="<%= href %>" hreflang="<%= lang %>"><%= "#{name} (#{lang})" %></a></li>
+              <% end %>
+              </ul>
             </li>
           </ul>
         </div>
@@ -138,33 +141,27 @@
 
       </div>
       <!-- /.navbar-header -->
+
     </div>
     <!-- /.container -->
   </nav>
-
-
-
-
-
-
-
-
 
   <!-- Intro Section -->
   <section id="intro">
     <div class="video-content">
       <div class="video-image wp1 delay-1s">
-        <img src="img/video-img.jpg" alt="">
+        <img src="/img/video-img.jpg" alt="">
       </div>
 
       <div class="overlay">
 
         <div class="container-wrapper">
+
           <div class="container">
             <div class="col-md-12 wp1 delay-05s">
 
               <div class="intro-info-wrapper">
-                <div class="logo-item"><img src="img/logo.png" width="80%" alt=""></div>
+                <div class="logo-item"><img src="/img/logo.png" width="80%" alt=""></div>
                 <div style="margin-top:-100px"></div>
                 <div id="owl-intro" class="owl-carousel owl-theme">
                   <!--<div class="item">
@@ -173,7 +170,7 @@
                       </div>  
                     </div>-->
                   <div class="item">
-                    <h2 class="text-center">Could the New Heavens and New Earth begin Oct 7th, 2015?</h2>
+                    <h2 class="text-center"><%= t(:intro_subtitle) %></h2>
                   </div>
                 </div>
               </div>
@@ -184,30 +181,25 @@
           <!-- /.container -->
 
           <div class="media-btns buttons page-scroll">
-            <div class="btn btn-default play-btn" id="play-button">Play video<i class="fa fa-play animated"></i></div>
-            <div class="btn btn-default pause-btn" id="pause-button">Stop video<i class="fa fa-pause animated"></i></div>
-            <a class="btn btn-default about-btn" href="#about">View about<i class="fa fa-chevron-right"></i></a>
+            <div class="btn btn-default play-btn" id="play-button"><%= t(:play_video) %><i class="fa fa-play animated"></i></div>
+            <div class="btn btn-default pause-btn" id="pause-button"><%= t(:stop_video) %><i class="fa fa-pause animated"></i></div>
+            <a class="btn btn-default about-btn" href="#about"><%= t(:view_about) %><i class="fa fa-chevron-right"></i></a>
           </div>
 
         </div>
+        <!-- /.container-wrapper -->
+
       </div>
       <!-- /.overlay -->
 
       <div class="video-container">
         <div id="player"></div>
       </div>
+
     </div>
 
   </section>
   <!-- /#intro -->
-
-
-
-
-
-
-
-
 
 
   <!-- About Section -->
@@ -217,28 +209,25 @@
     </div>
 
     <div class="container wp2">
-      <h1 class="section-title">Why Oct 7th, 2015?</h1>
-
+      <h1 class="section-title"><%= t(:about_title) %></h1>
       <div class="row">
         <div class="col-lg-12 wp2 delay-05s">
-          <span style="font-size:18px">In order to give a proper answer, first we will start with May 21st, 2011. Actually, it is impossible to understand why October 7, 2015, is such an excellent candidate for a likely date that the world will end, unless we first understand fully why May 21st was the beginning of Judgment Day. <a href="http://www.ebiblefellowship.com/archives/2015/03/08/why-october-7-2015-is-the-likely-end-of-the-world-part-1/" target="_blank">(click here for more details)</a>
-
- <br><br>
-Years ago, God's people blew the trumpet and warned the world that JUDGMENT DAY would begin on May 21, 2011. That date was the most publicized date for the Day of Judgment that the world has ever seen. It was unprecedented and many were paying attention. The message was broadcasted on billboards and advertised on buses. It was also seen on cars, bumper stickers, t-shirts and even in subways. People read about this approaching day in magazines and newspapers. Major electronic media across the globe also trumpeted the warning message of the gospel, that indeed May 21st, 2011, would be JUDGMENT DAY!
-<br><br>
- 
-
-Much of the world was, in a sense, holding its collective breath in anticipation of this final judgment of God.
-<br><br>
- 
-
-Although many expected a physical manifestation of God’s wrath, God in fact, brought to pass a devastating spiritual judgment beginning on May 21, 2011. We have now entered into the darkest time in Earths’ history, as we are living in the day of judgment, and heading for the final end of all things, the destruction of the universe, and the beginning of the new heavens and new earth, very likely to be on October 7th 2015.
-
-<br><br>
-<span style="text-align:center; font-size:24px"><strong>What does this mean for me?</strong></span>
-          <br> We encourage you to watch the <a href="#movie-player">video</a> and explore the many <a href="#links">resources</a> listed on this site to learn more.
-          <p></p>
-          </span>
+          <p>
+            <%= t(:about_p1) %>
+              <a href="<%= t(:about_p1_href) %>" target="_blank"><%= t(:about_p1_link) %></a>
+          </p>
+          <p>
+            <%= t(:about_p2) %>
+          </p>
+          <p>
+            <%= t(:about_p3) %>
+          </p>
+          <p>
+            <%= t(:about_p4) %>
+          </p>
+          <p><span style="text-align:center; font-size:24px"><strong><%= t(:about_p5a) %></strong></span><br>
+            <%= t(:about_p5b) %>
+          </p>
         </div>
         <!-- /.col-lg-6 -->
       </div>
@@ -252,52 +241,53 @@ Although many expected a physical manifestation of God’s wrath, God in fact, b
   <section id="links">
     <div class="advantages">
 
-
       <div class="section-sub-title">
-        Faithful Resources for Further Study
+        <%= t(:links_title) %>
       </div>
+
       <div class="colored-line"></div>
 
       <div class="container">
         <div class="col-md-3 advantages-item wp7 delay-05s">
-          <a href="http://www.ebiblefellowship.com" target="_blank">
+          <a href="<%= t(:links_ebible_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3>E Bible Fellowship</h3>
+            <h3><%= t(:links_ebible_title) %></h3>
           </a>
           <p>
-            Here you will find many hours of teachings on the Bible which you can listen to online or freely download.
+            <%= t(:links_ebible_desc) %>
           </p>
         </div>
         <!-- /.col-md-4 -->
 
-
         <div class="col-md-3 advantages-item wp7">
-          <a href="http://www.ebible2.com" target="_blank">
+          <a href="<%= t(:links_ebible2_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3>E Bible2</h3>
+            <h3><%= t(:links_ebible2_title) %></h3>
           </a>
-          <p>Excellent info on Oct. 7th</p>
-          <a href="http://www.ebww.net" target="_blank"><h3>EBWW.net</h3>
-            <p>Foreign language resource for Oct 7th information</p>
-        </div>
+          <p><%= t(:links_ebww_tagline) %></p>
+          <a href="<%= t(:links_ebww_href) %>" target="_blank"><h3>EBWW.net</h3></a>
+          <p><%= t(:links_ebww_desc) %></p>
+  		</div>
         <!-- /.col-md-4 -->        
         
         <div class="col-md-3 advantages-item wp7">
-          <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-          <h3><a href="http://www.bmius.org" target="_blank">Bible Ministries International</a></h3>
+          <a href="http://www.bmius.org" target="_blank">
+            <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
+            <h3><%= t(:links_bmi_title) %></h3>
+          </a>
           <p>
-            BMI's mission is the Feeding God's sheep and to declare to the world that we are presently living in that day of judgment.
+            <%= t(:links_bmi_desc) %>
           </p>
         </div>
         <!-- /.col-md-4 -->
 
         <div class="col-md-3 advantages-item wp7 delay-05s">
-          <a href="http://fridaynightstudy.com" target="_blank">
+          <a href="<%= t(:links_fns_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3>Friday Night Study</h3>
+            <h3><%= t(:links_fns_title) %></h3>
           </a>
           <p>
-            Friday Night Study is a group of bible believing Christians who are trusting the Bible alone for spiritual guidance.
+            <%= t(:links_fns_desc) %>
           </p>
         </div>
         <!-- /.col-md-4 -->
@@ -308,9 +298,6 @@ Although many expected a physical manifestation of God’s wrath, God in fact, b
     <!-- /.container -->
   </section>
   <!-- /#links -->
-
-
-
 
 
   <!-- Movie-Player Section -->
@@ -325,20 +312,22 @@ Although many expected a physical manifestation of God’s wrath, God in fact, b
       <div class="col-lg-10 col-lg-offset-1 wp5 delay-05s">
         <!-- 16:9 aspect ratio -->
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe width="420" height="315" src="http://www.youtube.com/embed/O3ExzOX31yY" frameborder="0" allowfullscreen></iframe>
+          <iframe width="420" height="315" src="<%= t(:movie_href) %>" frameborder="0" allowfullscreen></iframe>
         </div>
         <br>
         <br>
         <p class="text-center">
-          Could October 7th, 2015 be the end of the world and the beginning of the New Heavens and the New Earth? <br>
-          The Bible indicates that it is a strong possibility. </p>
+          <%= t(:movie_p1a) %><br>
+          <%= t(:movie_p1b) %>
+        </p>
       </div>
       <!-- /.col-lg-12 -->
 
     </div>
-    <!-- /.container --> 
+    <!-- /.container -->
   </section>
-  
+
+
   <!-- Contact Section -->
   <section id="contact">
 
@@ -353,17 +342,17 @@ Although many expected a physical manifestation of God’s wrath, God in fact, b
               <li><a href="https://www.youtube.com/EBibleFellowship1"><i class="fa fa-youtube fa-fw"></i> <span>YouTube</span></a></li>
               <li><a href="https://vimeo.com/133226616"><i class="fa fa-vimeo-square fa-fw"></i> <span>Vimeo</span></a></li>
             </ul>
-            <img src="img/logo.png" width="35%" height="35%" alt=""/>  
+            <img src="/img/logo.png" width="35%" height="35%" alt="">
           </div>
-          <!-- /.col-lg-12 --> 
+          <!-- /.col-lg-12 -->
         </div>
-       </div>
-      <!-- /.row --> 
+      </div>
+      <!-- /.row -->
 
       <div class="row">
         <div class="copyright">
           © Oct7th.com 2015<br>
-          Media inquiries: <a href="mailto:info@oct7th.com">info@oct7th.com</a>
+          <%= t(:contact_email_desc) %>: <a href="mailto:info@oct7th.com">info@oct7th.com</a>
         </div>
         <div class="footer-line"></div>
       </div>
@@ -376,21 +365,21 @@ Although many expected a physical manifestation of God’s wrath, God in fact, b
 
 
   <!-- Core JavaScript Files -->
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
+  <script src="/js/jquery-1.10.2.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.easing.min.js"></script>
 
   <!-- JavaScript -->
-  <script src="js/lib/jquery.appear.js"></script>
-  <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
-  <script src="js/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
-  <script src="js/lib/video/jquery.mb.YTPlayer.js"></script> 		
-  <script src="js/lib/flipclock/flipclock.js"></script>
-  <script src="js/lib/jquery.animateNumber.js"></script>
-  <script src="js/lib/waypoints.min.js"></script>
+  <script src="/js/lib/jquery.appear.js"></script>
+  <script src="/js/lib/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/js/lib/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="/js/lib/video/jquery.mb.YTPlayer.js"></script>
+  <script src="/js/lib/flipclock/flipclock.js"></script>
+  <script src="/js/lib/jquery.animateNumber.js"></script>
+  <script src="/js/lib/waypoints.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 
 
 </body>

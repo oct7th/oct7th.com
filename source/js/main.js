@@ -1,6 +1,6 @@
 /*
 
-	Movie Me Main Java Script
+	Main Java Script
 
 	- - - - - Contents - - - - -
 	

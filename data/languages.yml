@@ -1,0 +1,8 @@
+active: [ de, en, es, fr, id, ru, vi ]
+de: {name: Deutsch, name_en: German}
+en: {name: English, name_en: English}
+es: {name: "Español", name_en: Spanish}
+fr: {name: "Fran&ccedil;ais", name_en: French}
+id: {name: "Bahasa Indonesia", name_en: Indonesian}
+ru: {name: "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", name_en: Russian}
+vi: {name: "Ti&#7871;ng Vi&#7879;t", name_en: Vietnamese}
