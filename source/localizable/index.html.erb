@@ -27,7 +27,7 @@
   if (!_fbq.loaded) {
   var fbds = document.createElement('script');
   fbds.async = true;
-  fbds.src = '//connect.facebook.net/en_US/fbds.js';
+  fbds.src = '//connect.facebook.net/<%= I18n.locale %>/fbds.js';
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(fbds, s);
   _fbq.loaded = true;
@@ -128,7 +128,7 @@
               <ul class="dropdown-menu">
               <% data.languages['active'].each do |lang|
                  # English is the root, others are subdirs
-                 href = (lang == 'en') ? '/' : "/#{lang}/"
+                 href = "/#{lang}/"
                  name = data.languages[lang]['name']
 %>
                 <li><a href="<%= href %>" hreflang="<%= lang %>"><%= "#{name} (#{lang})" %></a></li>
