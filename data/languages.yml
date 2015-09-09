@@ -1,8 +1,12 @@
-active: [ de, en, es, fr, id, ru, vi ]
-de: {name: Deutsch, name_en: German}
-en: {name: English, name_en: English}
-es: {name: "Español", name_en: Spanish}
-fr: {name: "Fran&ccedil;ais", name_en: French}
-id: {name: "Bahasa Indonesia", name_en: Indonesian}
-ru: {name: "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", name_en: Russian}
-vi: {name: "Ti&#7871;ng Vi&#7879;t", name_en: Vietnamese}
+active: [ de, en, es, fr, id, ru, tl, tr, ur, vi, zh ]
+de: {dir: ltr, name: Deutsch, name_en: German}
+en: {dir: ltr, name: English, name_en: English}
+es: {dir: ltr, name: "Español", name_en: Spanish}
+fr: {dir: ltr, name: "Fran&ccedil;ais", name_en: French}
+id: {dir: ltr, name: "Bahasa Indonesia", name_en: Indonesian}
+ru: {dir: ltr, name: "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", name_en: Russian}
+tl: {dir: ltr, name: "Tagalog", name_en: Tagalog}
+tr: {dir: ltr, name: "T&uuml;rk&ccedil;e", name_en: Turkish}
+ur: {dir: rtl, name: "اُردُو", name_en: Urdu}
+vi: {dir: ltr, name: "Ti&#7871;ng Vi&#7879;t", name_en: Vietnamese}
+zh: {dir: ltr, name: "&#x4E2D;&#x6587;", name_en: Chinese}

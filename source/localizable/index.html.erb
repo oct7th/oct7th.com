@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>">
+<html dir="<%= data.languages[I18n.locale]['dir'] %>" lang="<%= I18n.locale %>">
 
 <head>
   <meta charset="utf-8">
@@ -125,7 +125,7 @@
                  role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-language fa-large"></i> <%= "#{data.languages[I18n.locale]['name']} (#{I18n.locale})" %>
                 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" dir="ltr">
               <% data.languages['active'].each do |lang|
                  # English is the root, others are subdirs
                  href = "/#{lang}/"
@@ -251,7 +251,7 @@
         <div class="col-md-3 advantages-item wp7 delay-05s">
           <a href="<%= t(:links_ebible_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3><%= t(:links_ebible_title) %></h3>
+            <h3 title="<%= t(:links_ebible_title) %>">E Bible Fellowship</h3>
           </a>
           <p>
             <%= t(:links_ebible_desc) %>
@@ -262,18 +262,18 @@
         <div class="col-md-3 advantages-item wp7">
           <a href="<%= t(:links_ebible2_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3><%= t(:links_ebible2_title) %></h3>
+            <h3 title="<%= t(:links_ebible2_title) %>">E Bible2</h3>
           </a>
           <p><%= t(:links_ebww_tagline) %></p>
           <a href="<%= t(:links_ebww_href) %>" target="_blank"><h3>EBWW.net</h3></a>
           <p><%= t(:links_ebww_desc) %></p>
-  		</div>
+        </div>
         <!-- /.col-md-4 -->        
         
         <div class="col-md-3 advantages-item wp7">
           <a href="http://www.bmius.org" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3><%= t(:links_bmi_title) %></h3>
+            <h3 title="<%= t(:links_bmi_title) %>">Bible Ministries International</h3>
           </a>
           <p>
             <%= t(:links_bmi_desc) %>
@@ -284,7 +284,7 @@
         <div class="col-md-3 advantages-item wp7 delay-05s">
           <a href="<%= t(:links_fns_href) %>" target="_blank">
             <div class="advantages-item-icon"><i class="fa fa-external-link"></i></div>
-            <h3><%= t(:links_fns_title) %></h3>
+            <h3 title="<%= t(:links_fns_title) %>">Friday Night Study</h3>
           </a>
           <p>
             <%= t(:links_fns_desc) %>
