@@ -44,11 +44,25 @@ set :layout, false
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  # Array of all languages except the current one
+  def other_langs
+    langs - [I18n.locale]
+  end
+  # Display a language for menu as "Language name (locale)"
+  def lang_display(lang)
+    "#{config[:langs_meta][lang][:name]} (#{lang.to_s})"
+  end
+  # Return the value of the dir attribute for LTR/RTL support
+  def lang_dir
+    config[:langs_meta][I18n.locale][:dir]
+  end
+  # Youtube video id for current locale else for English
+  def youtube_id
+    config[:langs_meta][I18n.locale][:youtube_id] ||
+      config[:langs_meta][:en][:youtube_id]
+  end
+end
 
 set :css_dir, 'stylesheets'
 
@@ -76,8 +90,37 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
-# Localization (English is at the root)
-activate :i18n, :mount_at_root => false
+# Localization (English is a subdir like other languages)
+activate :i18n, :mount_at_root => false, 
+  :langs => [ :ar, :de, :en, :es, :fr, :id, :ru, :tl, :tr, :ur, :vi, :zh ]
+
+# Languages metadata
+config[:langs_meta] = {
+  :ar => { :dir => 'rtl', :name => "&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;", :name_en => 'Arabic',
+           :youtube_id => nil },
+  :de => { :dir => 'ltr', :name => "Deutsch", :name_en => 'German',
+           :youtube_id => nil },
+  :en => { :dir => 'ltr', :name => "English", :name_en => 'English',
+           :youtube_id => 'O3ExzOX31yY' },
+  :es => { :dir => 'ltr', :name => "Español", :name_en => 'Spanish',
+           :youtube_id => '8w7LNlYkrHA' },
+  :fr => { :dir => 'ltr', :name => "Fran&ccedil;ais", :name_en => 'French',
+           :youtube_id => 'mUL9hsmzErs' },
+  :id => { :dir => 'ltr', :name => "Bahasa Indonesia", :name_en => 'Indonesian',
+           :youtube_id => nil },
+  :ru => { :dir => 'ltr', :name => "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", :name_en => 'Russian',
+           :youtube_id => 'v1kF2IM-GC4' },
+  :tl => { :dir => 'ltr', :name => "Tagalog", :name_en => 'Tagalog',
+           :youtube_id => nil },
+  :tr => { :dir => 'ltr', :name => "T&uuml;rk&ccedil;e", :name_en => 'Turkish',
+           :youtube_id => '_tnmZIfkR04' },
+  :ur => { :dir => 'rtl', :name => "اُردُو", :name_en => 'Urdu',
+           :youtube_id => 'uSEfbDiILuk' },
+  :vi => { :dir => 'ltr', :name => "Ti&#7871;ng Vi&#7879;t", :name_en => 'Vietnamese',
+           :youtube_id => 'SrOjE_zyj48' },
+  :zh => { :dir => 'ltr', :name => "&#x4E2D;&#x6587;", :name_en => 'Chinese',
+           :youtube_id => nil },
+}
 
 # Support Apache .htaccess
 page 'htaccess.txt', :layout => false

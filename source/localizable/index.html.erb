@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="<%= data.languages[I18n.locale]['dir'] %>" lang="<%= I18n.locale %>">
+<html dir="<%= lang_dir %>" lang="<%= I18n.locale %>">
 
 <head>
   <meta charset="utf-8">
@@ -123,15 +123,14 @@
             <li class="dropdown page-scroll" style="text-transform: none;">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                  role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-language fa-large"></i> <%= "#{data.languages[I18n.locale]['name']} (#{I18n.locale})" %>
+                <i class="fa fa-language fa-large"></i> <%= lang_display(I18n.locale) %>
                 <span class="caret"></span></a>
               <ul class="dropdown-menu" dir="ltr">
-              <% data.languages['active'].each do |lang|
-                 # English is the root, others are subdirs
+              <% other_langs.each do |lang_sym|
+                 lang = lang_sym.to_s
                  href = "/#{lang}/"
-                 name = data.languages[lang]['name']
 %>
-                <li><a href="<%= href %>" hreflang="<%= lang %>"><%= "#{name} (#{lang})" %></a></li>
+                <li><a href="<%= href %>" hreflang="<%= lang %>"><%= lang_display(lang_sym) %></a></li>
               <% end %>
               </ul>
             </li>
@@ -379,6 +378,7 @@
   <script src="/js/lib/waypoints.min.js"></script>
 
   <!-- Custom Theme JavaScript -->
+  <script>var youtubeId = '<%= youtube_id %>';</script>
   <script src="/js/main.js"></script>
 
 

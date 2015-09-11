@@ -229,7 +229,7 @@ function centerContent()
 
 /* 07 - Video container (You Tube)
 -----------------------------------------------------------*/
-
+      // Assumes youtubeId has been defined previously.
       var tag = document.createElement('script');
       tag.src = "http://www.youtube.com/player_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -240,7 +240,7 @@ function centerContent()
           height: '100%',
           width: '100%',			
 		  playerVars: { 'rel':0 , 'autoplay': 0, 'loop':0, 'controls':0, 'start':1, 'autohide':1,'wmode':'opaque','hd':1 },          
-		  videoId: 'O3ExzOX31yY',
+		  videoId: youtubeId, //'O3ExzOX31yY',
           events: {
             'onReady': onPlayerReady,
 			'onStateChange': onPlayerStateChange}
