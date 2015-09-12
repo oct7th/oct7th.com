@@ -2876,3 +2876,9 @@ position:absolute;
 
 /*  18 - Your CSS Code
 -----------------------------------------------------------*/
+/* Use default width so languages that are more verbose than English
+ * won't run out of room. */
+.media-btns .btn {
+  width: auto;
+}
+
