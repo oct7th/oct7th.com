@@ -62,6 +62,10 @@ helpers do
     config[:langs_meta][I18n.locale][:youtube_id] ||
       config[:langs_meta][:en][:youtube_id]
   end
+  # Return "(English)" in the current language unless it's English
+  def english_note
+    I18n.locale == :en ? '' : '(' + t('english') + ')'
+  end
 end
 
 set :css_dir, 'stylesheets'
