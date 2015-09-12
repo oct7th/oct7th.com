@@ -283,7 +283,6 @@ function centerContent()
 
 // Onclick Java Script
 
-	
 	$(".play-btn").on('click', function() {
 	   $(this).hide();
 	   $('.video-image').css('display', 'none');
@@ -294,6 +293,7 @@ function centerContent()
    	   $('.media-btns').css('margin-top', '440px');
 	   $('.intro-info-wrapper').css('display', 'none');
 	   $('.video-content .overlay').css('background', 'none');
+	   $('.navbar').hide();
 	});
 
 	$(".pause-btn").on('click', function() {
@@ -307,6 +307,7 @@ function centerContent()
   	   $('.media-btns').css('margin-top', '0px');
 	   $('.video-content .overlay').css('background', 'rgba(0,0,0,0.4) url(img/overlay-pat.png)');
 	   $('.video-container #player').css('display', 'none');
+	   $('.navbar').show();
 	});
 
 $(document).ready(function(){
