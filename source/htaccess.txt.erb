@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteBase /
+
+# GENERATED RULES - DO NOT EDIT
+<% langs.each do |lang| %>
+RewriteCond %{HTTP:Accept-Language} ^<%= lang.to_s %>.*$ [NC]
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteRule ^/?$ /<%= lang.to_s %>/ [L,R=301]
+<% end %>
+# English is the default language
+RewriteCond %{REQUEST_URI} ^/$ [NC]
+RewriteRule ^/?$ /en/ [L,R=301]
