@@ -62,7 +62,7 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-custom navbar-fixed-top wp1" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
           <i class="fa fa-bars"></i>
@@ -103,10 +103,13 @@
 
         </div>
         <!-- /.navbar-brand -->
+      </div>
+      <!-- /.navbar-header -->
+
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-          <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse navbar-main-collapse">
+          <ul class="nav navbar-nav navbar-left">
             <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
             <li class="hidden">
               <a href="#page-top"></a>
@@ -120,10 +123,14 @@
             <li class="page-scroll">
               <a href="#links"><%= t(:nav_helpful_links) %></a>
             </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
             <li class="dropdown page-scroll" style="text-transform: none;">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                 role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-language fa-large"></i> <%= lang_display(I18n.locale) %>
+                 role="button" aria-haspopup="true" aria-expanded="false"
+                 title="<%= lang_display(I18n.locale) %>">
+                <i class="fa fa-language fa-large"></i> <%= I18n.locale.to_s %>
                 <span class="caret"></span></a>
               <ul class="dropdown-menu" dir="ltr">
               <% other_langs.each do |lang_sym|
@@ -137,9 +144,6 @@
           </ul>
         </div>
         <!-- /.navbar-collapse -->
-
-      </div>
-      <!-- /.navbar-header -->
 
     </div>
     <!-- /.container -->
@@ -212,7 +216,7 @@
       <div class="row">
         <div class="col-lg-12 wp2 delay-05s">
           <p>
-            <%= t(:about_p1) %>
+            <%= t(:about_p1) %><br>
               <a href="<%= t(:about_p1_href) %>" target="_blank"><%= t(:about_p1_link) %>&nbsp;<i class="fa fa-external-link"></i></a>
           </p>
           <p>
@@ -336,7 +340,7 @@
           <div class="col-lg-12 wp11">
             <ul class="social-buttons">
               <li dir="ltr"><a href="https://twitter.com/EndsOct72015"><i class="fa fa-twitter fa-fw"></i> <span>@EndsOct72015</span> <%= english_note %></a></li>
-              <li dir="ltr"><a href="https://www.facebook.com/groups/willworldendOctober7th2015/"><i class="fa fa-facebook fa-fw"></i> <span>willworldendOctober7th2015</span> <%= english_note %></a></li>
+              <li dir="ltr"><a href="https://www.facebook.com/groups/willworldendOctober7th2015/"><i class="fa fa-facebook fa-fw"></i> <span>willworldend-<br>October7th2015</span> <%= english_note %></a></li>
               <li dir="ltr"><a href="https://www.youtube.com/channel/UC8uFk1Rroy8v8yWbyQPAV4w/feed"><i class="fa fa-youtube fa-fw"></i> <span>Friday Night Study</span> <%= english_note %></a></li>
               <li dir="ltr"><a href="https://www.youtube.com/EBibleFellowship1"><i class="fa fa-youtube fa-fw"></i> <span>E Bible Fellowship</span> <%= english_note %></a></li>
               <li dir="ltr"><a href="https://www.youtube.com/channel/UCTj0qmscuMgMhj3L3zLkY6g"><i class="fa fa-youtube fa-fw"></i> <span>Bible Ministries International</span> <%= english_note %></a></li>
