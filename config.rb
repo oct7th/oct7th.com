@@ -96,12 +96,12 @@ end
 
 # Localization (English is a subdir like other languages)
 activate :i18n, :mount_at_root => false, 
-  :langs => [ :ar, :de, :en, :es, :fr, :id, :ru, :tl, :tr, :ur, :vi, :zh ]
+  :langs => [ :en, :es, :fr, :id, :'pa-PK', :ru, :ur, :vi ]
 
 # Languages metadata
 config[:langs_meta] = {
   :ar => { :dir => 'rtl', :name => "&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;", :name_en => 'Arabic',
-           :youtube_id => nil },
+           :youtube_id => 'NEIib_gA1zg' },
   :de => { :dir => 'ltr', :name => "Deutsch", :name_en => 'German',
            :youtube_id => nil },
   :en => { :dir => 'ltr', :name => "English", :name_en => 'English',
@@ -111,13 +111,17 @@ config[:langs_meta] = {
   :fr => { :dir => 'ltr', :name => "Fran&ccedil;ais", :name_en => 'French',
            :youtube_id => 'mUL9hsmzErs' },
   :id => { :dir => 'ltr', :name => "Bahasa Indonesia", :name_en => 'Indonesian',
-           :youtube_id => nil },
+           :youtube_id => 'CTWRMo6KUCk' },
+  :ja => { :dir => 'ltr', :name => "&#x65E5;&#x672C;&#x8A9E;", :name_en => 'Japanese',
+           :youtube_id => 'jGrVL6nB-_E' },
+  :'pa-PK' => { :dir => 'rtl', :name => "پنجابی", :name_en => 'Punjabi, Pakistan',
+           :youtube_id => 'EmEf54BcanQ' },
   :ru => { :dir => 'ltr', :name => "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", :name_en => 'Russian',
            :youtube_id => 'v1kF2IM-GC4' },
   :tl => { :dir => 'ltr', :name => "Tagalog", :name_en => 'Tagalog',
            :youtube_id => nil },
   :tr => { :dir => 'ltr', :name => "T&uuml;rk&ccedil;e", :name_en => 'Turkish',
-           :youtube_id => '_tnmZIfkR04' },
+           :youtube_id => 'UgsJLjmdCJE' },
   :ur => { :dir => 'rtl', :name => "اُردُو", :name_en => 'Urdu',
            :youtube_id => 'uSEfbDiILuk' },
   :vi => { :dir => 'ltr', :name => "Ti&#7871;ng Vi&#7879;t", :name_en => 'Vietnamese',
