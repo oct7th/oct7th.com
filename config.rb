@@ -43,6 +43,9 @@ set :layout, false
 #   activate :livereload
 # end
 
+config[:base_url] = (ENV['MM_ENV'] == 'production') ? 
+  'http://oct7th.com' : 'http://staging.oct7th.com'
+
 # Methods defined in the helpers block are available in templates
 helpers do
   # Array of all languages except the current one
