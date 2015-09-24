@@ -99,7 +99,7 @@ end
 
 # Localization (English is a subdir like other languages)
 activate :i18n, :mount_at_root => false, 
-  :langs => [ :en, :es, :fr, :id, :'pa-PK', :ru, :ur, :vi ]
+  :langs => [ :en, :es, :fr, :id, :'pa-PK', :pl, :ru, :ur, :vi ]
 
 # Languages metadata
 config[:langs_meta] = {
@@ -119,6 +119,8 @@ config[:langs_meta] = {
            :youtube_id => 'jGrVL6nB-_E' },
   :'pa-PK' => { :dir => 'rtl', :name => "پنجابی", :name_en => 'Punjabi, Pakistan',
            :youtube_id => 'EmEf54BcanQ' },
+  :pl => { :dir => 'ltr', :name => "Polski", :name_en => 'Polish',
+           :youtube_id => 'YJ7eEvWXuuM' },
   :ru => { :dir => 'ltr', :name => "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", :name_en => 'Russian',
            :youtube_id => 'v1kF2IM-GC4' },
   :tl => { :dir => 'ltr', :name => "Tagalog", :name_en => 'Tagalog',
