@@ -1,6 +1,11 @@
 RewriteEngine on
 RewriteBase /
 
+# Redirect all traffic sent to oct7th.com, oct7th2015.com and
+# october7th2015.com.
+RewriteCond %{lowercase:%{HTTP_HOST}} (oct7th|october7th) [NC]
+RewriteRule "^(/?.*)$" "http://oct7lastday.com/$1" [L,R=permanent]
+
 # GENERATED RULES - DO NOT EDIT
 <% langs.each do |lang| %>
 RewriteCond %{HTTP:Accept-Language} ^<%= lang.to_s %>.*$ [NC]
