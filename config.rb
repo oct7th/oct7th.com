@@ -44,7 +44,7 @@ set :layout, false
 # end
 
 config[:base_url] = (ENV['MM_ENV'] == 'production') ? 
-  'http://oct7th.com' : 'http://staging.oct7th.com'
+  'http://oct7lastday.com' : 'http://staging.oct7lastday.com'
 
 # Methods defined in the helpers block are available in templates
 helpers do
@@ -104,7 +104,7 @@ activate :i18n, :mount_at_root => false,
 # Languages metadata
 config[:langs_meta] = {
   :ar => { :dir => 'rtl', :name => "&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;", :name_en => 'Arabic',
-           :youtube_id => 'NEIib_gA1zg' },
+           :youtube_id => 'GvBq3MJAhUA' },
   :de => { :dir => 'ltr', :name => "Deutsch", :name_en => 'German',
            :youtube_id => nil },
   :en => { :dir => 'ltr', :name => "English", :name_en => 'English',
@@ -113,6 +113,8 @@ config[:langs_meta] = {
            :youtube_id => '8w7LNlYkrHA' },
   :fr => { :dir => 'ltr', :name => "Fran&ccedil;ais", :name_en => 'French',
            :youtube_id => 'mUL9hsmzErs' },
+  :hi => { :dir => 'ltr', :name => "&#x0939;&#x093F;&#x0928;&#x094D;&#x200D;&#x0926;&#x0940;", :name_en => 'Hindi',
+           :youtube_id => 'y39RVfyFKtg' },
   :id => { :dir => 'ltr', :name => "Bahasa Indonesia", :name_en => 'Indonesian',
            :youtube_id => 'CTWRMo6KUCk' },
   :ja => { :dir => 'ltr', :name => "&#x65E5;&#x672C;&#x8A9E;", :name_en => 'Japanese',
@@ -132,7 +134,7 @@ config[:langs_meta] = {
   :vi => { :dir => 'ltr', :name => "Ti&#7871;ng Vi&#7879;t", :name_en => 'Vietnamese',
            :youtube_id => 'SrOjE_zyj48' },
   :zh => { :dir => 'ltr', :name => "&#x4E2D;&#x6587;", :name_en => 'Chinese',
-           :youtube_id => nil },
+           :youtube_id => 'iUPQZ_pzzFc' },
 }
 
 # Support Apache .htaccess
