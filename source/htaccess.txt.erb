@@ -4,7 +4,10 @@ RewriteBase /
 # Redirect all traffic sent to oct7th.com, oct7th2015.com and
 # october7th2015.com.
 RewriteCond %{lowercase:%{HTTP_HOST}} (oct7th|october7th) [NC]
-RewriteRule "^(/?.*)$" "http://oct7lastday.com/$1" [L,R=permanent]
+RewriteRule "^(/?.*)$" "http://oct7lastday.com/$1" [R=301]
+
+# Redirect Google verification file to same path
+RewriteRule "^/(google.*)$" "/$1" [L]
 
 # GENERATED RULES - DO NOT EDIT
 <% langs.each do |lang| %>
