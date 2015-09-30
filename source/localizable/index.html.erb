@@ -39,9 +39,9 @@
   }
   })();
   window._fbq = window._fbq || [];
-  window._fbq.push(['track', '6028906726051', {'value':'0.00','currency':'USD'}]);
+  window._fbq.push(['track', '<%= facebook_pixel(:page_view) %>', {'value':'0.00','currency':'USD'}]);
   </script>
-  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6028906726051&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=<%= facebook_pixel(:page_view) %>&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
 
   <meta property="og:title" content="<%= t(:page_title) %>">
   <meta property="og:type" content="website">

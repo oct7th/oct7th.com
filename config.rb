@@ -69,6 +69,10 @@ helpers do
   def english_note
     I18n.locale == :en ? '' : '(' + t('english') + ')'
   end
+  # Facebook pixel id
+  def facebook_pixel(type)
+    config[:facebook_pixel][I18n.locale][type]
+  end
 end
 
 set :css_dir, 'stylesheets'
@@ -135,6 +139,20 @@ config[:langs_meta] = {
            :youtube_id => 'siZ8VFjDjo0' },
   :zh => { :dir => 'ltr', :name => "&#x4E2D;&#x6587;", :name_en => 'Chinese',
            :youtube_id => 'iUPQZ_pzzFc' },
+}
+
+# Facebook Pixel id's for each language
+config[:facebook_pixel] = {
+  :default => { :page_view => '6028906726051', :video_played => nil },
+  :en	   => { :page_view => '6037275053392', :video_played => '' },
+  :es	   => { :page_view => '6037273261392', :video_played => '' },
+  :fr	   => { :page_view => '6037274956792', :video_played => '' },
+  :id	   => { :page_view => '6037275097592', :video_played => '' },
+  :'pa-PK' => { :page_view => '6037275136792', :video_played => '' },
+  :pl	   => { :page_view => '6037275178392', :video_played => '' },
+  :ru	   => { :page_view => '6037275206792', :video_played => '' },
+  :ur	   => { :page_view => '6037275233192', :video_played => '' },
+  :vi	   => { :page_view => '6037275262792', :video_played => '' },
 }
 
 # Support Apache .htaccess
