@@ -172,3 +172,17 @@ after_build do
   File.rename 'build/htaccess.txt', 'build/.htaccess'
 end
 
+activate :deploy do |deploy|
+  deploy.method		= :sftp
+  deploy.host		= 'oct7lastday.com'
+  deploy.path		= case ENV['MM_ENV']
+    when 'production' then '/home/oct7lastday/public_html'
+    when 'staging' then '/home/oct7lastday/staging/build'
+    end
+  # Optional Settings
+  deploy.user  = 'oct7lastday' # no default
+  # deploy.port  = 5309 # ssh port, default: 22
+  deploy.clean = true # remove orphaned files on remote host, default: false
+  # deploy.flags = '-rltgoDvzO --no-p --del' # add custom flags, default: -avz
+end
+
