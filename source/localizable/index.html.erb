@@ -19,7 +19,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-68119263', 'auto');
+  ga('create', 'UA-68119263-1', 'auto');
   ga('send', 'pageview');
 
   </script>
@@ -178,7 +178,7 @@
               <div class="intro-info-wrapper">
                 <div class="logo-item"><img src="/img/logo.png" width="80%" alt=""></div>
                 <div style="margin-top:-80px"></div>
-                <h2 class="text-center" style="font-weight: bold; font-size: 300%;"><i class="fa fa-angle-double-right"></i>&nbsp;Oct7LastDay.com&nbsp;<i class="fa fa-angle-double-left"></i></h2>
+                <h2 class="text-center" dir="ltr" style="font-weight: bold; font-size: 300%;"><i class="fa fa-arrow-right"></i>&nbsp;Oct7LastDay.com&nbsp;<i class="fa fa-arrow-left"></i></h2>
                 <div id="owl-intro" class="owl-carousel owl-theme">
                   <!--<div class="item">
                       <div class="clock-wrapper">
@@ -199,8 +199,12 @@
           <!-- /.container -->
 
           <div class="media-btns buttons page-scroll">
+<% if I18n.locale.to_s == 'zh' %>
+            <a class="btn btn-default play-btn" href="#movie-player"><%= t(:play_video) %><i class="fa fa-play-circle fa-lg animated"></i></a>
+<% else %>
             <div class="btn btn-default play-btn" id="play-button"><%= t(:play_video) %><i class="fa fa-play-circle fa-lg animated"></i></div>
             <div class="btn btn-default pause-btn" id="pause-button"><%= t(:stop_video) %><i class="fa fa-pause fa-lg animated"></i></div>
+<% end %>
             <a class="btn btn-default about-btn" href="#about"><%= t(:view_about) %><i class="fa fa-info-circle fa-lg"></i></a>
           </div>
 
@@ -320,7 +324,11 @@
       <div class="col-lg-10 col-lg-offset-1 wp5 delay-05s">
         <!-- 16:9 aspect ratio -->
         <div class="embed-responsive embed-responsive-16by9">
+<% if I18n.locale.to_s == 'zh' %>
+          <iframe src="https://player.vimeo.com/video/141090381?byline=0" width="420" height="236" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<% else %>
           <iframe width="420" height="315" src="http://www.youtube.com/embed/<%= youtube_id %>" frameborder="0" allowfullscreen></iframe>
+<% end %>
         </div>
         <br>
         <br>

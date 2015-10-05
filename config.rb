@@ -103,7 +103,7 @@ end
 
 # Localization (English is a subdir like other languages)
 activate :i18n, :mount_at_root => false, 
-  :langs => [ :en, :es, :fr, :id, :'pa-PK', :pl, :ru, :ur, :vi ]
+  :langs => [ :en, :es, :fr, :id, :'pa-PK', :pl, :ru, :ur, :vi, :zh ]
 
 # Languages metadata
 config[:langs_meta] = {
@@ -138,7 +138,7 @@ config[:langs_meta] = {
   :vi => { :dir => 'ltr', :name => "Ti&#7871;ng Vi&#7879;t", :name_en => 'Vietnamese',
            :youtube_id => 'siZ8VFjDjo0' },
   :zh => { :dir => 'ltr', :name => "&#x4E2D;&#x6587;", :name_en => 'Chinese',
-           :youtube_id => 'iUPQZ_pzzFc' },
+           :youtube_id => 'iUPQZ_pzzFc', :vimeo_id => '141090381' },
 }
 
 # Facebook Pixel id's for each language
@@ -153,6 +153,7 @@ config[:facebook_pixel] = {
   :ru	   => { :page_view => '6037275206792', :video_played => '' },
   :ur	   => { :page_view => '6037275233192', :video_played => '' },
   :vi	   => { :page_view => '6037275262792', :video_played => '' },
+  :zh	   => { :page_view => '6037394214792', :video_played => '' },
 }
 
 # Support Apache .htaccess

@@ -149,3 +149,6 @@ DEPENDENCIES
   tzinfo-data
   wdm (~> 0.1.0)
   web_translate_it
+
+BUNDLED WITH
+   1.10.2
