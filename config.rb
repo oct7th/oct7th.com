@@ -111,7 +111,7 @@ end
 
 # Localization (English is a subdir like other languages)
 activate :i18n, :mount_at_root => false, 
-  :langs => [ :ar, :de, :en, :es, :fr, :hi, :id, :it, :ja, :ko, :ne, :'pa-PK', :pl, :ru, :th, :tl, :tr, :ur, :vi, :zh ]
+  :langs => [ :ar, :de, :en, :es, :fr, :hi, :id, :it, :ja, :ko, :ne, :'pa-PK', :pl, :pt, :ru, :th, :tl, :tr, :ur, :vi, :zh ]
 
 # Languages metadata
 config[:langs_meta] = {
@@ -141,6 +141,8 @@ config[:langs_meta] = {
            :youtube_id => 'XSX2_EBua_8' },
   :pl => { :dir => 'ltr', :name => "Polski", :name_en => 'Polish',
            :youtube_id => 'LZzR3ETjGJ4' },
+  :pt => { :dir => 'ltr', :name => "Portugu&ecirc;s", :name_en => 'Portuguese',
+           :youtube_id => nil, :youtube_cc => true },
   :ru => { :dir => 'ltr', :name => "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", :name_en => 'Russian',
            :youtube_id => 'y34knCgibHM' },
   :th => { :dir => 'ltr', :name => "&#x0E44;&#x0E17;&#x0E22;", :name_en => 'Thai',
@@ -173,6 +175,7 @@ config[:facebook_pixel] = {
   :ne	   => { :page_view => '6037658877592', :video_played => '' },
   :'pa-PK' => { :page_view => '6037275136792', :video_played => '' },
   :pl	   => { :page_view => '6037275178392', :video_played => '' },
+  :pt	   => { :page_view => '6037672919192', :video_played => '' },
   :ru	   => { :page_view => '6037275206792', :video_played => '' },
   :th	   => { :page_view => '6037658787392', :video_played => '' },
   :tl	   => { :page_view => '6037601281792', :video_played => '' },
