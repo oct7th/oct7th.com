@@ -229,17 +229,23 @@ function centerContent()
 
 /* 07 - Video container (You Tube)
 -----------------------------------------------------------*/
-      // Assumes youtubeId has been defined previously.
+      // Assumes youtubeId, youtubeVarsCc and youtubeVarsHl have been defined previously.
       var tag = document.createElement('script');
       tag.src = "http://www.youtube.com/player_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       var player;
       function onYouTubePlayerAPIReady() {
+	var playerVars = { 'rel':0 , 'autoplay': 0, 'loop':0, 'controls':0, 'start':1, 'autohide':1,'wmode':'opaque','hd':1 };
+	if (youtubeVarsCc == 1) {
+	  playerVars.hl = youtubeVarsHl;
+	  playerVars.cc_load_policy = 1;
+	}
         player = new YT.Player('player', {
           height: '100%',
           width: '100%',			
-		  playerVars: { 'rel':0 , 'autoplay': 0, 'loop':0, 'controls':0, 'start':1, 'autohide':1,'wmode':'opaque','hd':1 },          
+		  //playerVars: { 'rel':0 , 'autoplay': 0, 'loop':0, 'controls':0, 'start':1, 'autohide':1,'wmode':'opaque','hd':1 },          
+		  playerVars: playerVars,
 		  videoId: youtubeId, //'O3ExzOX31yY',
           events: {
             'onReady': onPlayerReady,

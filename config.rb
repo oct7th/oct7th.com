@@ -65,6 +65,14 @@ helpers do
     config[:langs_meta][I18n.locale][:youtube_id] ||
       config[:langs_meta][:en][:youtube_id]
   end
+  # Force closed captions for this locale?
+  def youtube_cc?
+    config[:langs_meta][I18n.locale][:youtube_cc]
+  end
+  # Youtube closed caption attributes for html iframe
+  def youtube_cc_html
+    youtube_cc? ? "&amp;cc_load_policy=1&amp;hl=#{I18n.locale}" : ''
+  end
   # Return "(English)" in the current language unless it's English
   def english_note
     I18n.locale == :en ? '' : '(' + t('english') + ')'
@@ -103,14 +111,14 @@ end
 
 # Localization (English is a subdir like other languages)
 activate :i18n, :mount_at_root => false, 
-  :langs => [ :ar, :en, :es, :fr, :hi, :id, :ja, :ko, :'pa-PK', :pl, :ru, :tr, :ur, :vi, :zh ]
+  :langs => [ :ar, :de, :en, :es, :fr, :hi, :id, :it, :ja, :ko, :ne, :'pa-PK', :pl, :ru, :th, :tl, :tr, :ur, :vi, :zh ]
 
 # Languages metadata
 config[:langs_meta] = {
   :ar => { :dir => 'rtl', :name => "&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;", :name_en => 'Arabic',
            :youtube_id => 'Emt92Mc7N8c' },
   :de => { :dir => 'ltr', :name => "Deutsch", :name_en => 'German',
-           :youtube_id => nil },
+           :youtube_id => nil, :youtube_cc => true },
   :en => { :dir => 'ltr', :name => "English", :name_en => 'English',
            :youtube_id => 'q3HjXdXDtb4' },
   :es => { :dir => 'ltr', :name => "Español", :name_en => 'Spanish',
@@ -121,18 +129,24 @@ config[:langs_meta] = {
            :youtube_id => '7sqbdppPc2Y' },
   :id => { :dir => 'ltr', :name => "Bahasa Indonesia", :name_en => 'Indonesian',
            :youtube_id => '8JWShow4OKk' },
+  :it => { :dir => 'ltr', :name => "Italiano", :name_en => 'Italian',
+           :youtube_id => nil, :youtube_cc => true },
   :ja => { :dir => 'ltr', :name => "&#x65E5;&#x672C;&#x8A9E;", :name_en => 'Japanese',
            :youtube_id => '2YoPVyTqwa0' },
   :ko => { :dir => 'ltr', :name => "&#xD55C;&#xAD6D;&#xC5B4;", :name_en => 'Korean',
            :youtube_id => 'jUJTVn6a7X4' },
+  :ne => { :dir => 'ltr', :name => "&#x928;&#x947;&#x92a;&#x93e;&#x932;&#x940;", :name_en => 'Nepali',
+           :youtube_id => nil, :youtube_cc => true },
   :'pa-PK' => { :dir => 'rtl', :name => "پنجابی", :name_en => 'Punjabi, Pakistan',
            :youtube_id => 'XSX2_EBua_8' },
   :pl => { :dir => 'ltr', :name => "Polski", :name_en => 'Polish',
            :youtube_id => 'LZzR3ETjGJ4' },
   :ru => { :dir => 'ltr', :name => "&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;&nbsp;(Russkij)", :name_en => 'Russian',
            :youtube_id => 'y34knCgibHM' },
+  :th => { :dir => 'ltr', :name => "&#x0E44;&#x0E17;&#x0E22;", :name_en => 'Thai',
+           :youtube_id => nil, :youtube_cc => true },
   :tl => { :dir => 'ltr', :name => "Tagalog", :name_en => 'Tagalog',
-           :youtube_id => nil },
+           :youtube_id => nil, :youtube_cc => true },
   :tr => { :dir => 'ltr', :name => "T&uuml;rk&ccedil;e", :name_en => 'Turkish',
            :youtube_id => 'Dy4qIwOwEuo' },
   :ur => { :dir => 'rtl', :name => "اُردُو", :name_en => 'Urdu',
@@ -153,11 +167,14 @@ config[:facebook_pixel] = {
   :fr	   => { :page_view => '6037274956792', :video_played => '' },
   :hi	   => { :page_view => '6037600978992', :video_played => '' },
   :id	   => { :page_view => '6037275097592', :video_played => '' },
+  :it	   => { :page_view => '6037658688592', :video_played => '' },
   :ja	   => { :page_view => '6037601034392', :video_played => '' },
   :ko	   => { :page_view => '6037601102392', :video_played => '' },
+  :ne	   => { :page_view => '6037658877592', :video_played => '' },
   :'pa-PK' => { :page_view => '6037275136792', :video_played => '' },
   :pl	   => { :page_view => '6037275178392', :video_played => '' },
   :ru	   => { :page_view => '6037275206792', :video_played => '' },
+  :th	   => { :page_view => '6037658787392', :video_played => '' },
   :tl	   => { :page_view => '6037601281792', :video_played => '' },
   :tr	   => { :page_view => '6037601327592', :video_played => '' },
   :ur	   => { :page_view => '6037275233192', :video_played => '' },
