@@ -118,7 +118,7 @@ config[:langs_meta] = {
   :ar => { :dir => 'rtl', :name => "&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;", :name_en => 'Arabic',
            :youtube_id => 'Emt92Mc7N8c' },
   :de => { :dir => 'ltr', :name => "Deutsch", :name_en => 'German',
-           :youtube_id => nil, :youtube_cc => true },
+           :youtube_id => 'b9WXgHV549s' },
   :en => { :dir => 'ltr', :name => "English", :name_en => 'English',
            :youtube_id => 'q3HjXdXDtb4' },
   :es => { :dir => 'ltr', :name => "Español", :name_en => 'Spanish',
